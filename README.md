@@ -4,6 +4,23 @@
 
 ## Objective
 Build a machine learning system that reads a customer support ticket, assigns it to a category, and gives it a priority level (High / Medium / Low), so support teams spend less time sorting and more time solving.
+## Summary for Business Readers
+**The problem:** support teams lose time sorting tickets by hand, and urgent problems can get buried.
+
+**What this system does:** it reads a ticket, sends it to the right category (Access, Hardware, HR Support and so on), and flags how urgent it is (High, Medium or Low).
+
+**How well it works:** it picks the right category for about 85 out of 100 tickets. Guessing the most common category would be right about 28 times out of 100.
+
+**What it means for operations:** most tickets can be routed automatically, urgent tickets (about 7% of the total) are flagged first, and staff time goes to solving problems instead of sorting them. Tickets about administrative rights are the hardest for the model, so a person should still review those.
+
+## Repository Contents
+| File | What it is |
+| `Task2.ipynb` | Full notebook: cleaning, training, evaluation, priority rules, demo |
+| `ticket_category_model.joblib` | Saved category model |
+| `tfidf_vectorizer.joblib` | Saved text-to-numbers converter (needed to use the model) |
+| `all_tickets_processed_improved_v3.csv` | Dataset used |
+| `t2_*.png` | Charts and demo screenshot |
+| `requirements.txt` | Python libraries needed |
 
 ## Dataset
 **IT Service Ticket Classification Dataset (Kaggle)**: 47,837 real help-desk tickets with the ticket text (`Document`) and its category (`Topic_group`). After cleaning, 47,835 tickets were used (2 became empty and were removed).
